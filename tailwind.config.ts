@@ -24,6 +24,14 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
+				
+				/* Reward App Colors */
+				'primary-purple': 'hsl(var(--primary-purple))',
+				'primary-blue': 'hsl(var(--primary-blue))',
+				'accent-green': 'hsl(var(--accent-green))',
+				'accent-emerald': 'hsl(var(--accent-emerald))',
+				'glass-bg': 'hsl(var(--glass-bg))',
+				'glass-border': 'hsl(var(--glass-border))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
