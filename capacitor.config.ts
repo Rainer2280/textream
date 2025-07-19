@@ -20,7 +20,7 @@ const config: CapacitorConfig = {
       splashImmersive: true,
     },
     UnityAds: {
-      gameId: "your_unity_game_id",
+      gameId: "5902743",
       testMode: true
     },
   },

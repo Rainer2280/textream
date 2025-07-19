@@ -1,7 +1,7 @@
 import { Capacitor } from '@capacitor/core';
 
 // Unity Ads configuration
-const UNITY_GAME_ID = 'your_unity_game_id'; // Replace with your actual Unity Game ID
+const UNITY_GAME_ID = '5902743'; // Unity Game ID
 const UNITY_PLACEMENT_ID = 'Interstitial_Android'; // Default placement for interstitial ads
 
 interface UnityAdsPlugin {
