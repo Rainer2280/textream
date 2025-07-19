@@ -3,6 +3,7 @@ import { Capacitor } from '@capacitor/core';
 // Unity Ads configuration
 const UNITY_GAME_ID = '5902743'; // Unity Game ID
 const UNITY_PLACEMENT_ID = 'Interstitial_Android'; // Default placement for interstitial ads
+const UNITY_REWARDED_PLACEMENT_ID = 'Rewarded_Android'; // Placement for rewarded ads
 
 interface UnityAdsPlugin {
   initialize: (options: { gameId: string; testMode: boolean }) => Promise<void>;
@@ -83,6 +84,30 @@ class UnityAdsService {
       }
     } catch (error) {
       console.error('Failed to show Unity Ad:', error);
+    }
+  }
+
+  async showRewardedAd() {
+    if (!this.isInitialized || !this.unityAds) {
+      console.log('Unity Ads not initialized');
+      return;
+    }
+
+    try {
+      // Check if rewarded ad is ready
+      const { ready } = await this.unityAds.isReady({ placementId: UNITY_REWARDED_PLACEMENT_ID });
+      
+      if (ready) {
+        await this.unityAds.showInterstitial({ placementId: UNITY_REWARDED_PLACEMENT_ID });
+        console.log('Unity Rewarded Ad shown successfully');
+        return true; // Return true when ad is completed successfully
+      } else {
+        console.log('Unity Rewarded Ad not ready');
+        return false;
+      }
+    } catch (error) {
+      console.error('Failed to show Unity Rewarded Ad:', error);
+      return false;
     }
   }
 

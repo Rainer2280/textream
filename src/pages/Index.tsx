@@ -44,6 +44,17 @@ const Index = () => {
     { id: 4, brand: "Supercell", duration: 20, reward: 35, category: t('gaming') },
   ];
 
+  const handleAdClick = async (ad: typeof availableAds[0]) => {
+    if (ad.brand === "Nokia") {
+      const success = await unityAdsService.showRewardedAd();
+      if (success) {
+        // Reward the user with aura points
+        setAuraPoints(prev => prev + ad.reward);
+        setTotalEarned(prev => prev + (ad.reward / 1000));
+      }
+    }
+  };
+
   const recentEarnings = [
     { brand: "K-Market", points: 40, time: `2 ${t('hoursAgo')}` },
     { brand: "Spotify", points: 50, time: `5 ${t('hoursAgo')}` },
@@ -198,13 +209,24 @@ const Index = () => {
           </CardHeader>
           <CardContent className="space-y-3">
             {availableAds.map((ad) => (
-              <div key={ad.id} className="flex items-center justify-between p-3 bg-white/10 rounded-lg border border-white/10">
+              <div 
+                key={ad.id} 
+                className={`flex items-center justify-between p-3 bg-white/10 rounded-lg border border-white/10 ${
+                  ad.brand === "Nokia" ? "cursor-pointer hover:bg-white/20 transition-colors" : ""
+                }`}
+                onClick={() => handleAdClick(ad)}
+              >
                 <div className="flex-1">
                   <div className="flex items-center space-x-2">
                     <h3 className="font-semibold text-white">{ad.brand}</h3>
                     <Badge variant="secondary" className="text-xs bg-purple-500/20 text-purple-200 border-purple-400/30">
                       {ad.category}
                     </Badge>
+                    {ad.brand === "Nokia" && (
+                      <Badge variant="secondary" className="text-xs bg-green-500/20 text-green-200 border-green-400/30">
+                        {t('clickToWatch') || 'Click to Watch'}
+                      </Badge>
+                    )}
                   </div>
                   <div className="flex items-center text-sm text-purple-200 mt-1">
                     <Clock className="w-3 h-3 mr-1" />
