@@ -19,6 +19,10 @@ const config: CapacitorConfig = {
       splashFullScreen: true,
       splashImmersive: true,
     },
+    UnityAds: {
+      gameId: "your_unity_game_id",
+      testMode: true
+    },
   },
 };
 

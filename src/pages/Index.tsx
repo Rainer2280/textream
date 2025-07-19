@@ -8,6 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useAuth } from "@/contexts/AuthContext";
 import LanguageSelector from "@/components/LanguageSelector";
+import { unityAdsService } from "@/services/unityAds";
 
 const Index = () => {
   const { t } = useLanguage();
@@ -18,8 +19,19 @@ const Index = () => {
   const exchangeRate = 1000; // 1000 AP = 1 EUR
   const euroEquivalent = auraPoints / exchangeRate;
 
-  // Redirect to auth if not logged in
+  // Initialize Unity Ads and handle auth redirect
   useEffect(() => {
+    const initializeAds = async () => {
+      await unityAdsService.initialize();
+      if (unityAdsService.isAvailable()) {
+        await unityAdsService.showLoadingAd();
+      }
+    };
+
+    if (loading) {
+      initializeAds();
+    }
+
     if (!loading && !user) {
       navigate('/auth');
     }
@@ -38,11 +50,17 @@ const Index = () => {
     { brand: "Uber", points: 35, time: `1 ${t('dayAgo')}` },
     ];
 
-  // Show loading state
+  // Show loading state with Unity Ad integration
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900 flex items-center justify-center">
-        <div className="text-white text-xl">Loading...</div>
+        <div className="flex flex-col items-center space-y-4">
+          <div className="animate-spin rounded-full h-16 w-16 border-t-2 border-b-2 border-white"></div>
+          <div className="text-white text-xl">Loading...</div>
+          {unityAdsService.isAvailable() && (
+            <div className="text-purple-200 text-sm">Loading ad content...</div>
+          )}
+        </div>
       </div>
     );
   }
