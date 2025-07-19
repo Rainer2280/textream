@@ -54,8 +54,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
-      {/* Header */}
-      <div className="bg-white/10 backdrop-blur-sm border-b border-white/20">
+      {/* Header - Fixed at top */}
+      <div className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-sm border-b border-white/20">
         <div className="max-w-md mx-auto px-6 py-4 flex items-center justify-between">
           <div className="text-white">
             <h1 className="text-2xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
@@ -77,7 +77,7 @@ const Index = () => {
         </div>
       </div>
 
-      <div className="max-w-md mx-auto px-6 pb-20">
+      <div className="max-w-md mx-auto px-6 pb-20 pt-24">
         {/* Balance Card */}
         <Card className="mt-6 bg-white/10 backdrop-blur-sm border-white/20 text-white">
           <CardHeader className="pb-3">
