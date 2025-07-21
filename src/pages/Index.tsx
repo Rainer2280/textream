@@ -45,7 +45,7 @@ const Index = () => {
   ];
 
   const handleAdClick = async (ad: typeof availableAds[0]) => {
-    if (ad.brand === "Nokia") {
+    if (["Nokia", "Fazer", "Marimekko", "Supercell"].includes(ad.brand)) {
       const success = await unityAdsService.showRewardedAd();
       if (success) {
         // Reward the user with aura points
@@ -212,7 +212,7 @@ const Index = () => {
               <div 
                 key={ad.id} 
                 className={`flex items-center justify-between p-3 bg-white/10 rounded-lg border border-white/10 ${
-                  ad.brand === "Nokia" ? "cursor-pointer hover:bg-white/20 transition-colors" : ""
+                  ["Nokia", "Fazer", "Marimekko", "Supercell"].includes(ad.brand) ? "cursor-pointer hover:bg-white/20 transition-colors" : ""
                 }`}
                 onClick={() => handleAdClick(ad)}
               >
@@ -222,7 +222,7 @@ const Index = () => {
                     <Badge variant="secondary" className="text-xs bg-purple-500/20 text-purple-200 border-purple-400/30">
                       {ad.category}
                     </Badge>
-                    {ad.brand === "Nokia" && (
+                    {["Nokia", "Fazer", "Marimekko", "Supercell"].includes(ad.brand) && (
                       <Badge variant="secondary" className="text-xs bg-green-500/20 text-green-200 border-green-400/30">
                         {t('clickToWatch') || 'Click to Watch'}
                       </Badge>
